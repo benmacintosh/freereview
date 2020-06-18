@@ -8,7 +8,6 @@ from flask import url_for
 from werkzeug.exceptions import abort
 from flask import Flask
 
-from flask_flatpages import FlatPages
 from flask_frozen import Freezer
 
 import json
@@ -27,9 +26,7 @@ import re
 # )
 
 app=Flask(__name__)
-app.config.from_pyfile('settings.py')
-pages = FlatPages(app)
-freezer = Freezer(app)
+
 
 bp = Blueprint("why", __name__)
 
@@ -41,16 +38,20 @@ def index():
     return render_template('index.html')
     # return render_template('articles/article_template.html')
 
-@bp.route("/free")
+@bp.route("/free.html")
 def free():
     # return first article
     return render_template('free.html')
 
-@bp.route("/<page>")
-def page(page):
-    return render_template(page+".html")
+# @bp.route("/<page>")
+# def page(page):
+#     return render_template(page+".html")
 
+
+
+app.register_blueprint(bp)
+app.config.from_pyfile('settings.py')
+freezer = Freezer(app)
 
 if __name__=="__main__":
-	app.register_blueprint(bp)
 	app.run(debug=True)
