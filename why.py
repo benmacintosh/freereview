@@ -8,6 +8,9 @@ from flask import url_for
 from werkzeug.exceptions import abort
 from flask import Flask
 
+from flask_flatpages import FlatPages
+from flask_frozen import Freezer
+
 import json
 import random
 import re
@@ -24,6 +27,9 @@ import re
 # )
 
 app=Flask(__name__)
+app.config.from_pyfile('settings.py')
+pages = FlatPages(app)
+freezer = Freezer(app)
 
 bp = Blueprint("why", __name__)
 
