@@ -33,9 +33,8 @@ bp = Blueprint("why", __name__)
 @bp.route("/")
 def index():
     # return first article
-    # redirect(url_for("blog.index"))
-
-    return render_template('index.html')
+    
+    return redirect(url_for("why.page",page='def'))
     # return render_template('articles/article_template.html')
 
 @bp.route("/free.html")
@@ -43,9 +42,9 @@ def free():
     # return first article
     return render_template('free.html')
 
-# @bp.route("/<page>")
-# def page(page):
-#     return render_template(page+".html")
+@bp.route("/<page>.html")
+def page(page):
+    return render_template('articles/'+page+".html")
 
 
 

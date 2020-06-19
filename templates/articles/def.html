@@ -1,20 +1,7 @@
-<!doctype html>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-
-<link rel="stylesheet" href="static/general.css">
-<link rel="shortcut icon" type="image/x-icon" href="static/favicon.ico"/>
+{% extends 'index.html' %}
 
 
-<head>
-	<title>free_rev</title>
-</head>
-
-<div class="header">
-	  <img src="static/logo.png" height="100"></img>
-  <h1>The <a href="/freereview/free.html">Free</a> Review of Propositions</h1>
-</div>
-
-
+{% block content %}
 
 <body>
 
@@ -58,3 +45,4 @@ werkzeug.routing.BuildError: Could not build url for endpoint 'blog.page' with v
 	</pre>
 </body>
 
+{% endblock %}
