@@ -14,4 +14,39 @@
   <h1>The <a href="{{ url_for('why.free')}}">Free</a> Review of Propositions</h1>
 </div>
 
+
+
+
+
+
+<script>
+	function initMap(){
+		var location = {lat: -25.63, lng: 131.044};
+
+		var map = new google.maps.Map(document.getElementById("map"),{
+			zoom: 4,
+			center: location
+		});
+
+		var marker = new google.maps.Marker({
+			position: location,
+			map:map,
+			icon:''
+		});
+
+		var infoWindow = new google.maps.InfoWindow({
+			content:'<a>hello</a>'
+		});
+
+		infoWindow.open(map,marker);
+
+		// marker.addListener('click',function(){
+		// 	infoWindow.open(map,marker);
+		// });
+	}
+</script>
+
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAaNyRz5BSZ3sfKiPUDuYStmZCxQjt14qo&callback=initMap"></script>
+
+
 {% block content %}{% endblock %}
