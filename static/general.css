@@ -52,9 +52,11 @@ body {
 	height: 133px;
 }
 
-/*p {
-	counter-reset: section;
-}*/
+p {
+	overflow: hidden;
+	word-break: break-word;
+	max-width: auto;
+}
 p::before{
 	content: counter(paragraph) " ";
 	color: #D3D3D3;
@@ -62,10 +64,13 @@ p::before{
 }
 
 
-#map {
+#map{
+	column-count: 2;
+	/*above is a glitch temporary fix*/
 	overflow: hidden;
 	height:500px;
-	width:auto;
+/*	width:auto;
+	max-width: var(--inner);*/
 }
 
 .gm-ui-hover-effect {
@@ -111,7 +116,6 @@ section{
 	counter-increment: paragraph -1;
 	column-count: 2;
 	column-gap: 2em;
-	word-break: break-word;
 	overflow: hidden;
 	/*border: 1px solid;*/
 }
