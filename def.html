@@ -16,33 +16,53 @@
 
 
 
-
-
-
 <script>
 	function initMap(){
-		var location = {lat: -25.63, lng: 131.044};
-
 		var map = new google.maps.Map(document.getElementById("map"),{
+			mapTypeControl: false,
+			streetViewControl: false,
+			fullscreenControl: false,
+			zoomControl: false,
 			zoom: 4,
-			center: location
+			center: {lat: -25.63, lng: 131.044},
+			styles:
+						[
+		  {
+		    "stylers": [
+		      {
+		        "saturation": -100
+		      },
+		      {
+		        "visibility": "simplified"
+		      }
+		    ]
+		  }
+		]
 		});
 
-		var marker = new google.maps.Marker({
-			position: location,
-			map:map,
-			icon:''
+
+
+
+
+		var boxs = [
+		{
+			coords:{lat: -25.63, lng: 131.044},
+			content:'hello hello hello hello hello hello'
+		}]
+
+		for(var i = 0;i<boxs.length;i++){
+			addBox(boxs[i])
+		}
+
+
+		function addBox(box){
+			var thisbox = new google.maps.InfoWindow({
+			content:box.content,
+			maxWidth: 133,
+			position: box.coords
 		});
-
-		var infoWindow = new google.maps.InfoWindow({
-			content:'<a>hello</a>'
-		});
-
-		infoWindow.open(map,marker);
-
-		// marker.addListener('click',function(){
-		// 	infoWindow.open(map,marker);
-		// });
+			thisbox.open(map);
+		}
 	}
 </script>
 
@@ -54,9 +74,14 @@
 <body>
 
 <!-- map -->
+			<!-- gestureHandling: "none", -->
 
 
 	<section>
+		<div style ="overflow:hidden;">
+	<div id = "map" style = "height: 200px;"></div>
+</div>
+
 	<p>  File "C:\Users\benma\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\_compat.py", line 39, in reraise
     raise value
   File "C:\Users\benma\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\helpers.py", line 358, in url_for
@@ -86,11 +111,12 @@ werkzeug.routing.BuildError: Could not build url for endpoint 'blog.page' with v
 	last lose
 </p>
 
-
 	</section>
 
 	<pre>
 		<span>hh</span>
 	</pre>
+
+
 </body>
 

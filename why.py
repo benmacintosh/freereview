@@ -34,6 +34,10 @@ bp = Blueprint("why", __name__)
 def index():
     # return first article
     
+
+    # go through the articles and load the map
+
+    
     return redirect(url_for("why.page",page='def'))
     # return render_template('articles/article_template.html')
 

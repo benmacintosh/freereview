@@ -30,7 +30,9 @@ h1 {
 	font-style:italic;
 }
 
-body { 
+body {
+	overflow: hidden;
+	display: flow-root;
 	font-family: 'Times New Roman';
   max-width: 1080px; 
   margin: 0 auto !important; 
@@ -60,7 +62,27 @@ p::before{
 }
 
 
+#map {
+	overflow: hidden;
+	height:500px;
+	width:auto;
+}
 
+.gm-ui-hover-effect {
+	position:center;
+    display: none !important;
+}
+.gm-style .gm-style-iw {
+	/*font-family: 'Times New Roman';*/
+	font-size: 10px;
+   text-align: center;
+}
+.gm-style-cc { display:none; }
+
+a[href^="https://maps.google.com/maps"],
+a[href^="https://www.google.com/maps"] {
+    display: none !important;
+}
 
 a:link {
 text-decoration: none;
@@ -86,10 +108,11 @@ color: hotpink;
 
 
 section{
-	counter-increment: paragraph 0;
+	counter-increment: paragraph -1;
 	column-count: 2;
 	column-gap: 2em;
 	word-break: break-word;
+	overflow: hidden;
 	/*border: 1px solid;*/
 }
 
