@@ -39,6 +39,8 @@ body {
   float: none !important; 
 }
 
+
+
 .header img {
   float: right;
   height: 100px;
@@ -57,6 +59,7 @@ p {
 	word-break: break-word;
 	max-width: auto;
 }
+
 p::before{
 	content: counter(paragraph) " ";
 	color: #D3D3D3;
@@ -72,6 +75,7 @@ p::before{
 /*	width:auto;
 	max-width: var(--inner);*/
 }
+
 
 .gm-ui-hover-effect {
 	position:center;
@@ -111,6 +115,11 @@ color: hotpink;
 
 
 
+#props {
+	color: #a1ce4b;
+}
+
+
 
 section{
 	counter-increment: paragraph -1;
@@ -125,3 +134,4 @@ section{
 		column-count: 3;
 	}
 }
+
