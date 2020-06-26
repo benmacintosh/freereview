@@ -32,13 +32,10 @@ bp = Blueprint("why", __name__)
 
 @bp.route("/")
 def index():
-    # return first article
-    
-
-    # go through the articles and load the map
+    # load most recent article, indexhtml will load the map
 
     
-    return redirect(url_for("why.page",page='def'))
+    return redirect(url_for("why.page",page='1'))
     # return render_template('articles/article_template.html')
 
 @bp.route("/free.html")
