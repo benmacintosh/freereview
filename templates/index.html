@@ -21,7 +21,10 @@
 
 
 
-<script src="{{ url_for('static', filename='props.js') }}"></script>
+<script src="{{ url_for('static', filename='props.js') }}">
+	console.log("index props");
+	console.log(props)
+</script>
 
 
 <script src="{{ url_for('static', filename='mapcode.js') }}"></script>
