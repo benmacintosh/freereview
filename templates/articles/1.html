@@ -82,6 +82,7 @@ werkzeug.routing.BuildError: Could not build url for endpoint 'blog.page' with v
 
 var nextUrl = window.location.href;
 var lastIndex = nextUrl.lastIndexOf("/");
+console.log(lastIndex)
 var number = parseInt(nextUrl.slice(lastIndex+1,-5));
 
 var theseProps = props[number-1];
