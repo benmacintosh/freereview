@@ -21,9 +21,10 @@
 	var righthome = nextUrl.slice(0,lastIndex);
 	favicon.setAttribute('href',righthome+"/static/favicon.ico");
 
+	console.log(righthome)
 	if (nextUrl.charAt(nextUrl.length-1) != "l"){
 		console.log("not rticle");
-		window.location.href = nextUrl+toString(props.length)+".html";
+		window.location.href = righthome+toString(props.length)+".html";
 	}
 	console.log('propslength')
 	console.log(props.length)
