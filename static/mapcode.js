@@ -62,7 +62,7 @@ function initMap(){
 
 		var a = new google.maps.Marker({
 		icon:{
-			url: '/static/icon.png',
+			url: window.location.origin+'/static/icon.png',
 			scaledSize: new google.maps.Size(50, 50)
 		},
 		label: {
@@ -75,7 +75,7 @@ function initMap(){
 
 		var b = new google.maps.Marker({
 		icon:{
-			url: '/static/icon.png',
+			url: window.location.origin+'/static/icon.png',
 			scaledSize: new google.maps.Size(50, 50)
 		},
 		label: {
@@ -88,7 +88,7 @@ function initMap(){
 
 		var c = new google.maps.Marker({
 		icon:{
-			url: '/static/icon.png',
+			url: window.location.origin+'/static/icon.png',
 			scaledSize: new google.maps.Size(50, 50)
 		},
 		label: {
