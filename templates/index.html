@@ -23,7 +23,7 @@
 
 	console.log(props)
 	console.log(righthome)
-	if (nextUrl.charAt(nextUrl.length-1) != "l"){
+	if (nextUrl.charAt(nextUrl.length-1) != "l" and props!== null){
 		console.log("not rticle");
 		console.log(props.length)
 		window.location.href = righthome+toString(props.length)+".html";
