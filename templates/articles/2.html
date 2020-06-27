@@ -68,11 +68,12 @@ werkzeug.routing.BuildError: Could not build url for endpoint 'blog.page' with v
 
 
 
+
+
+
+
 <script src="{{ url_for('static', filename='props.js') }}">
 </script>
-
-
-
 
 
 <script>
@@ -90,6 +91,8 @@ document.getElementById("p1").innerHTML = theseProps[0];
 document.getElementById("p2").innerHTML = theseProps[2];
 document.getElementById("p3").innerHTML = theseProps[4];
 
+var articleProp = theseProps;
+
 // var bounds = new google.maps.LatLngBounds();
 // bounds.extend(theseProps[1]);
 // bounds.extend(theseProps[3]);
@@ -98,6 +101,7 @@ document.getElementById("p3").innerHTML = theseProps[4];
 // map.panToBounds(bounds);	
 
 </script>
+
 
 
 <script src="{{ url_for('static', filename='mapcode.js') }}"></script>
