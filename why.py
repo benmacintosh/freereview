@@ -63,7 +63,7 @@ def page():
 	# newarticles = ["/templates/articles/"+x for x in articles]
 	newarticles = [x+1 for x in range(0,len(articles))]
 	# print(newarticles)
-
+	
 	for article in newarticles:
 		yield 'why.page', {'page' : article}
 		# yield {"templates/articles" :article}
