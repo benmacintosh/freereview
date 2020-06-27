@@ -58,11 +58,13 @@ function initMap(){
 
 
 
-
+		var nextUrl = window.location.href;
+		var lastIndex = nextUrl.lastIndexOf("/");
+		var righthome = nextUrl.slice(0,lastIndex);
 
 		var a = new google.maps.Marker({
 		icon:{
-			url: window.location.origin+'/static/icon.png',
+			url: righthome+'/static/icon.png',
 			scaledSize: new google.maps.Size(50, 50)
 		},
 		label: {
@@ -75,7 +77,7 @@ function initMap(){
 
 		var b = new google.maps.Marker({
 		icon:{
-			url: window.location.origin+'/static/icon.png',
+			url: righthome+'/static/icon.png',
 			scaledSize: new google.maps.Size(50, 50)
 		},
 		label: {
@@ -88,7 +90,7 @@ function initMap(){
 
 		var c = new google.maps.Marker({
 		icon:{
-			url: window.location.origin+'/static/icon.png',
+			url: righthome+'/static/icon.png',
 			scaledSize: new google.maps.Size(50, 50)
 		},
 		label: {
