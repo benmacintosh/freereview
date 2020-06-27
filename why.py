@@ -42,6 +42,7 @@ def index():
     return redirect(nextUrl+"/"+str(numberArticles)+".html",code="302")
     # return redirect(url_for("why.page",page=str(numberArticles)))
 
+
 @bp.route("/free.html")
 def free():
     # return first article
