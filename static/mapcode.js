@@ -103,14 +103,18 @@ function initMap(){
 		// click events to articles
 		// var thisI = i+1;
 
+		var nextUrl = window.location.href;
+		var lastIndex = nextUrl.lastIndexOf("/");
+		var nextUrl = nextUrl.slice(0,lastIndex);
+		// console.log(nextUrl);
 		a.addListener('click',function(){
-			window.location.replace(window.location.origin+"/"+(index)+".html");
+			window.location.replace(nextUrl+"/"+(index)+".html");
 		});
 		b.addListener('click',function(){
-			window.location.replace(window.location.origin+"/"+(index)+".html");
+			window.location.replace(nextUrl+"/"+(index)+".html");
 		});
 		c.addListener('click',function(){
-			window.location.replace(window.location.origin+"/"+(index)+".html");
+			window.location.replace(nextUrl+"/"+(index)+".html");
 		});
 
 		// google.maps.event.addListener(box1, 'click', function() {
