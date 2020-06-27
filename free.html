@@ -16,6 +16,8 @@
 	var nextUrl = window.location.href;
 	var lastIndex = nextUrl.lastIndexOf("/");
 	var righthome = nextUrl.slice(0,lastIndex);
+	console.log('right')
+	console.log(righthome)
 	favicon.setAttribute('href',righthome+"/static/favicon.ico");
 
 </script>
@@ -38,13 +40,10 @@
 
 
 <script src="/freereview/static/props.js">
-	console.log("index props");
-	console.log(props)
 </script>
 
 
 <script src="/freereview/static/mapcode.js">
-	console.log("index maps")
 </script>
 
 
