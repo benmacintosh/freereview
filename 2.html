@@ -108,15 +108,20 @@ werkzeug.routing.BuildError: Could not build url for endpoint 'blog.page' with v
 <script src="/freereview/static/props.js">
 </script>
 
+<script src="/freereview/static/mapcode.js"></script>
+
 
 <script>
-console.log(map)
 
 var number = window.location.pathname.slice(1,-5);
 
 var theseProps = props[number-1];
 console.log('theseProps')
 console.log(theseProps)
+
+console.log("map")
+console.log(map)
+
 
 var pageNumber = String(1700-number)+"/1700";
 document.getElementById("pn").innerHTML = pageNumber;
@@ -137,7 +142,6 @@ var articleProp = theseProps;
 
 
 
-<script src="/freereview/static/mapcode.js"></script>
 
 
 
