@@ -4,6 +4,9 @@
 <link rel="stylesheet" href="static/general.css">
 
 
+<script src="/freereview/static/props.js">
+</script>
+
 <script>
 	var favicon = document.querySelector('link[rel="shortcut icon"]');
 	if(!favicon){
@@ -19,7 +22,8 @@
 	favicon.setAttribute('href',righthome+"/static/favicon.ico");
 
 	if (nextUrl.charAt(nextUrl.length-1) != "l"){
-		console.log("not rticle")
+		console.log("not rticle");
+		window.location.href = nextUrl+parseInt(prop.length-1)+".html";
 	}
 </script>
 <!-- <link rel="shortcut icon" type="image/x-icon" href= "window.location + static/favicon.ico")/>
@@ -40,8 +44,7 @@
 
 
 
-<script src="/freereview/static/props.js">
-</script>
+
 
 
 <script src="/freereview/static/mapcode.js">
