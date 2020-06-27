@@ -62,7 +62,7 @@ def page():
 	articles = os.listdir('templates/articles')
 	# newarticles = ["/templates/articles/"+x for x in articles]
 	newarticles = [x+1 for x in range(0,len(articles))]
-	print(newarticles)
+	# print(newarticles)
 
 	for article in newarticles:
 		yield 'why.page', {'page' : article}
