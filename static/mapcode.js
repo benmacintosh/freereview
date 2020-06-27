@@ -103,6 +103,7 @@ function initMap(){
 		// click events to articles
 		// var thisI = i+1;
 
+
 		var nextUrl = window.location.href;
 		var lastIndex = nextUrl.lastIndexOf("/");
 		var nextUrl = nextUrl.slice(0,lastIndex);
