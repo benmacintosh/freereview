@@ -14,6 +14,8 @@ import json
 import random
 import re
 
+import os, os.path
+
 
 
 # from .auth import login_required
@@ -32,11 +34,10 @@ bp = Blueprint("why", __name__)
 
 @bp.route("/")
 def index():
-    # load most recent article, indexhtml will load the map
 
-    
-    return redirect(url_for("why.page",page='1'))
-    # return render_template('articles/article_template.html')
+    # fetch latest article
+    numberArticles = len(os.listdir('templates/articles'))
+    return redirect(url_for("why.page",page=str(numberArticles)))
 
 @bp.route("/free.html")
 def free():
@@ -45,6 +46,7 @@ def free():
 
 @bp.route("/<page>.html")
 def page(page):
+
     return render_template('articles/'+page+".html")
 
 

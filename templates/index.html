@@ -2,7 +2,9 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
 <link rel="stylesheet" href="static/general.css">
+
 <link rel="shortcut icon" type="image/x-icon" href="static/favicon.ico"/>
+
 
 
 <head>
@@ -16,58 +18,18 @@
 
 
 
-<script>
-	function initMap(){
-		var map = new google.maps.Map(document.getElementById("map"),{
-			mapTypeControl: false,
-			streetViewControl: false,
-			fullscreenControl: false,
-			zoomControl: false,
-			zoom: 4,
-			center: {lat: -25.63, lng: 131.044},
-			styles:
-						[
-		  {
-		    "stylers": [
-		      {
-		        "saturation": -100
-		      },
-		      {
-		        "visibility": "simplified"
-		      }
-		    ]
-		  }
-		]
-		});
 
 
 
+<script src="{{ url_for('static', filename='props.js') }}"></script>
 
 
+<script src="{{ url_for('static', filename='mapcode.js') }}"></script>
 
-		var boxs = [
-		{
-			coords:{lat: -25.63, lng: 131.044},
-			content:'hello hello hello hello hello hello'
-		}]
-
-		for(var i = 0;i<boxs.length;i++){
-			addBox(boxs[i])
-		}
-
-
-		function addBox(box){
-			var thisbox = new google.maps.InfoWindow({
-			content:box.content,
-			maxWidth: 133,
-			position: box.coords
-		});
-			thisbox.open(map);
-		}
-	}
-</script>
 
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAaNyRz5BSZ3sfKiPUDuYStmZCxQjt14qo&callback=initMap"></script>
+<!-- <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script> -->
 
 
 {% block content %}{% endblock %}
+

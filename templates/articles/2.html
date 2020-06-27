@@ -5,15 +5,6 @@
 
 
 
-
-<script src="{{ url_for('static', filename='props.js') }}">
-</script>
-
-
-<script src="{{ url_for('static', filename='mapcode.js') }}"></script>
-
-
-
 <body>
 
 
@@ -77,6 +68,11 @@ werkzeug.routing.BuildError: Could not build url for endpoint 'blog.page' with v
 
 
 
+<script src="{{ url_for('static', filename='props.js') }}">
+</script>
+
+
+
 
 
 <script>
@@ -84,14 +80,14 @@ console.log(map)
 
 var number = window.location.pathname.slice(1,-5);
 
-var articleProp = props[number-1];
-console.log(articleProp)
+var theseProps = props[number-1];
+console.log(theseProps)
 
 var pageNumber = String(1700-number)+"/1700";
 document.getElementById("pn").innerHTML = pageNumber;
-document.getElementById("p1").innerHTML = articleProp[0];
-document.getElementById("p2").innerHTML = articleProp[2];
-document.getElementById("p3").innerHTML = articleProp[4];
+document.getElementById("p1").innerHTML = theseProps[0];
+document.getElementById("p2").innerHTML = theseProps[2];
+document.getElementById("p3").innerHTML = theseProps[4];
 
 // var bounds = new google.maps.LatLngBounds();
 // bounds.extend(theseProps[1]);
@@ -103,6 +99,7 @@ document.getElementById("p3").innerHTML = articleProp[4];
 </script>
 
 
+<script src="{{ url_for('static', filename='mapcode.js') }}"></script>
 
 
 
