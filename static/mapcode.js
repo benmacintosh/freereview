@@ -206,7 +206,7 @@ function initMap(){
 	// if been defined from another article
 	var bounds = new google.maps.LatLngBounds();
 	if(articleProp !== null){
-		console.log('articleprop');
+		console.log('articleprop inside mapcode');
 		console.log(articleProp);
 		bounds.extend(articleProp[1]);
 		bounds.extend(articleProp[3]);
