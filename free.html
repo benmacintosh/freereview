@@ -13,7 +13,10 @@
 		head.appendChild(favicon)
 	}
 	favicon.setAttribute('type','image/png');
-	favicon.setAttribute('href',window.location.origin+"/static/favicon.ico");
+	var nextUrl = window.location.href;
+	var lastIndex = nextUrl.lastIndexOf("/");
+	var righthome = nextUrl.slice(0,lastIndex);
+	favicon.setAttribute('href',righthome+"/static/favicon.ico");
 
 </script>
 <!-- <link rel="shortcut icon" type="image/x-icon" href= "window.location + static/favicon.ico")/>
