@@ -37,8 +37,10 @@ def index():
 
     # fetch latest article
     numberArticles = len(os.listdir('templates/articles'))
-
-    return redirect(url_for("why.page",page=str(numberArticles)))
+    nextUrl = request.base_url
+    nextUrl = nextUrl[0:nextUrl.rfind("/")]
+    return redirect(nextUrl+"/"+str(numberArticles)+".html",code="302")
+    # return redirect(url_for("why.page",page=str(numberArticles)))
 
 @bp.route("/free.html")
 def free():
@@ -47,6 +49,7 @@ def free():
 
 @bp.route("/<page>.html")
 def page(page):
+
 	return render_template('articles/'+page+".html")
 
 
@@ -63,7 +66,7 @@ def page():
 	# newarticles = ["/templates/articles/"+x for x in articles]
 	newarticles = [x+1 for x in range(0,len(articles))]
 	# print(newarticles)
-	
+
 	for article in newarticles:
 		yield 'why.page', {'page' : article}
 		# yield {"templates/articles" :article}
