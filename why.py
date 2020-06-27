@@ -37,6 +37,7 @@ def index():
 
     # fetch latest article
     numberArticles = len(os.listdir('templates/articles'))
+
     return redirect(url_for("why.page",page=str(numberArticles)))
 
 @bp.route("/free.html")
@@ -46,14 +47,27 @@ def free():
 
 @bp.route("/<page>.html")
 def page(page):
-
-    return render_template('articles/'+page+".html")
-
+	return render_template('articles/'+page+".html")
 
 
 app.register_blueprint(bp)
 app.config.from_pyfile('settings.py')
-freezer = Freezer(app)
+freezer = Freezer(app,with_static_files=True)
+
+
+
+@freezer.register_generator
+def page():
+
+	articles = os.listdir('templates/articles')
+	# newarticles = ["/templates/articles/"+x for x in articles]
+	newarticles = [x+1 for x in range(0,len(articles))]
+	print(newarticles)
+
+	for article in newarticles:
+		yield 'why.page', {'page' : article}
+		# yield {"templates/articles" :article}
+		# yield {"index": '/templates/articles/'+article}
 
 if __name__=="__main__":
 	app.run(debug=True)

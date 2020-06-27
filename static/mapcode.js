@@ -109,7 +109,8 @@ function initMap(){
 		// console.log(nextUrl);
 		a.addListener('click',function(){
 			window.location.replace(nextUrl+"/"+(index)+".html");
-		});
+			// return(<a href="{{ url_for('auth.register') }}">Register</a></li>);
+			});
 		b.addListener('click',function(){
 			window.location.replace(nextUrl+"/"+(index)+".html");
 		});
