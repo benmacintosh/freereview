@@ -40,8 +40,8 @@ def index():
     nextUrl = request.base_url
     nextUrl = nextUrl[0:nextUrl.rfind("/")]
     # print(numberArticles)
-    # return redirect(nextUrl+"/"+str(numberArticles)+".html",code="302")
-    return redirect(url_for("why.page",page=str(numberArticles)))
+    return redirect(nextUrl+"/"+str(numberArticles)+".html",code="302")
+    # return redirect(url_for("why.page",page=str(numberArticles)))
 
 
 
