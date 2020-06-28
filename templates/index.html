@@ -60,7 +60,7 @@
 	// console.log(props)
 	// console.log(righthome)
 	// console.log(nextUrl.charAt(nextUrl.length-1))
-	if (nextUrl.charAt(nextUrl.length-1) !== "l"){
+	if (nextUrl.charAt(nextUrl.length-1) !== "l" && props !== null){
 		console.log("not rticle");
 		console.log(props.length)
 		window.location.href = righthome+toString(props.length)+".html";
