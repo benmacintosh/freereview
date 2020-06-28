@@ -5,36 +5,9 @@
 
 
 <script src="{{ url_for('static', filename='props.js') }}">
+		console.log('index props')
 </script>
 
-
-<script>
-	console.log('index scripts running')
-	var favicon = document.querySelector('link[rel="shortcut icon"]');
-	if(!favicon){
-		favicon = document.createElement('link');
-		favicon.setAttribute('rel', "shortcut icon");
-		var head = document.querySelector('head');
-		head.appendChild(favicon)
-	}
-	favicon.setAttribute('type','image/png');
-	var nextUrl = window.location.href;
-	var lastIndex = nextUrl.lastIndexOf("/");
-	var righthome = nextUrl.slice(0,lastIndex);
-	favicon.setAttribute('href',righthome+"/static/favicon.ico");
-
-	console.log(props)
-	console.log(righthome)
-	if (nextUrl.charAt(nextUrl.length-1) != "l" and props!== null){
-		console.log("not rticle");
-		console.log(props.length)
-		window.location.href = righthome+toString(props.length)+".html";
-	}
-	console.log('propslength')
-	console.log(props.length)
-</script>
-<!-- <link rel="shortcut icon" type="image/x-icon" href= "window.location + static/favicon.ico")/>
- -->
 
 
 
@@ -56,6 +29,7 @@
 
 
 <script src="{{ url_for('static', filename='mapcode.js') }}">
+	console.log('index map')
 </script>
 
 
@@ -63,5 +37,42 @@
 <!-- <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script> -->
 
 
-{% block content %}{% endblock %}
 
+
+<script>
+	console.log('index scripts running')
+
+	var favicon = document.querySelector('link[rel="shortcut icon"]');
+
+	if(!favicon){
+		favicon = document.createElement('link');
+		favicon.setAttribute('rel', "shortcut icon");
+		var head = document.querySelector('head');
+		head.appendChild(favicon)
+	}
+
+	favicon.setAttribute('type','image/png');
+	var nextUrl = window.location.href;
+	var lastIndex = nextUrl.lastIndexOf("/");
+	var righthome = nextUrl.slice(0,lastIndex);
+	favicon.setAttribute('href',righthome+"/static/favicon.ico");
+
+	// console.log(props)
+	// console.log(righthome)
+	// console.log(nextUrl.charAt(nextUrl.length-1))
+	if (nextUrl.charAt(nextUrl.length-1) !== "l"){
+		console.log("not rticle");
+		console.log(props.length)
+		window.location.href = righthome+toString(props.length)+".html";
+	}
+
+	// console.log('propslength')
+	// console.log(props.length)
+</script>
+<!-- <link rel="shortcut icon" type="image/x-icon" href= "window.location + static/favicon.ico")/>
+ -->
+
+
+
+
+{% block content %}{% endblock %}
