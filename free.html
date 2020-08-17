@@ -89,7 +89,13 @@
 
 <!-- send to most recent -->
 
-order
+<div id="newspaper">
+	<p></p>
+</div>
+
+
+
+
 
 <!-- location of newest -->
 
@@ -99,6 +105,16 @@ order
 
 <!-- then change map -->
 
+
+
+<script>
+	var news=document.getElementById("newspaper");
+	for(var i = props.length; i>0; i=i-1){
+		var title = "p"+String(1700-i)+"<a href="+String(i)+".html> "+props[i-1][6]+"</a> <div></div>";
+		news.innerHTML+=title;
+	}
+	news.innerHTML+="<p></p>"
+</script>
 
 </body>
 

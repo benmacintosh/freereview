@@ -64,7 +64,7 @@ function initMap(){
 
 		var a = new google.maps.Marker({
 		icon:{
-			url: righthome+'/static/icon.png',
+			url: righthome+'/static/temp.png',
 			scaledSize: new google.maps.Size(50, 50)
 		},
 		label: {
@@ -77,7 +77,7 @@ function initMap(){
 
 		var b = new google.maps.Marker({
 		icon:{
-			url: righthome+'/static/icon.png',
+			url: righthome+'/static/temp.png',
 			scaledSize: new google.maps.Size(50, 50)
 		},
 		label: {
@@ -90,7 +90,7 @@ function initMap(){
 
 		var c = new google.maps.Marker({
 		icon:{
-			url: righthome+'/static/icon.png',
+			url: righthome+'/static/temp.png',
 			scaledSize: new google.maps.Size(50, 50)
 		},
 		label: {
@@ -210,9 +210,13 @@ function initMap(){
 	if(articleProp !== null){
 		console.log('articleprop inside mapcode');
 		console.log(articleProp);
-		bounds.extend(articleProp[1]);
-		bounds.extend(articleProp[3]);
-		bounds.extend(articleProp[5]);
+		if(articleProp.length>2){
+			bounds.extend(articleProp[1]);
+			bounds.extend(articleProp[3]);				
+		}
+		if(articleProp.length>5){
+			bounds.extend(articleProp[5]);
+		}
 		map.fitBounds(bounds);
 		map.panToBounds(bounds);
 	}

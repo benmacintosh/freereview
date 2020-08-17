@@ -41,6 +41,7 @@ body {
 
 
 
+
 .header img {
   float: right;
   height: 100px;
@@ -71,7 +72,7 @@ p::before{
 	column-count: 2;
 	/*above is a glitch temporary fix*/
 	overflow: hidden;
-	height:500px;
+	height:399px;
 /*	width:auto;
 	max-width: var(--inner);*/
 }
@@ -87,6 +88,7 @@ p::before{
    text-align: center;
 }
 .gm-style-cc { display:none; }
+
 
 a[href^="https://maps.google.com/maps"],
 a[href^="https://www.google.com/maps"] {
@@ -115,13 +117,16 @@ color: hotpink;
 }
 
 
-
 #props {
-	#p1;
+	/*#p1;*/
 	color: #a1ce4b;
 }
 
-.p1 props{
+
+#newspaper{
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
 }
 
 
@@ -139,3 +144,8 @@ section{
 	}
 }
 
+#end {
+	text-align: right;
+	color: #D3D3D3;
+	font-style: italic;
+}
