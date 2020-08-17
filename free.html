@@ -109,8 +109,9 @@
 
 <script>
 	var news=document.getElementById("newspaper");
+	var propslength = props[0].length
 	for(var i = props.length; i>0; i=i-1){
-		var title = "p"+String(1700-i)+"<a href="+String(i)+".html> "+props[i-1][6]+"</a> <div></div>";
+		var title = "p"+String(1700-i)+"<a href="+String(i)+".html> "+props[i-1][propslength-1]+"</a> <div></div>";
 		news.innerHTML+=title;
 	}
 	news.innerHTML+="<p></p>"
