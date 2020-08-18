@@ -134,62 +134,81 @@ function initMap(){
 
 
 
-		// line1
-		var request = {
-			origin: theseProps[1],
-		    destination: theseProps[3],
-		    travelMode: 'BICYCLING'
-		};
-		directionsService.route(request, function(result, status) {
-			if (status == 'OK') {
-				directionsRenderer1.setDirections(result);
-			}else{
-				var path = new google.maps.Polyline({
-					path: [theseProps[1],theseProps[3]],
-					geodesic: true
-				})
-				path.setMap(map);
-			}
-		});
+		// // line1
+		// var request = {
+		// 	origin: theseProps[1],
+		//     destination: theseProps[3],
+		//     travelMode: 'BICYCLING'
+		// };
+		// directionsService.route(request, function(result, status) {
+		// 	if (status == 'OK') {
+		// 		directionsRenderer1.setDirections(result);
+		// 	}else{
+		// 		var path = new google.maps.Polyline({
+		// 			path: [theseProps[1],theseProps[3]],
+		// 			geodesic: true
+		// 		})
+		// 		path.setMap(map);
+		// 	}
+		// });
 
-		// line2
-		var request = {
-			origin: theseProps[3],
-		    destination: theseProps[5],
-		    travelMode: 'BICYCLING'
-		};
-		directionsService.route(request, function(result, status) {
-			if (status == 'OK') {
-				directionsRenderer2.setDirections(result);
-			}else{
-				var path = new google.maps.Polyline({
-					path: [theseProps[3],theseProps[5]],
-					strokeColor: color2,
-					geodesic: true
-				})
-				path.setMap(map);
-			}
-		});
+		// // line2
+		// var request = {
+		// 	origin: theseProps[3],
+		//     destination: theseProps[5],
+		//     travelMode: 'BICYCLING'
+		// };
+		// directionsService.route(request, function(result, status) {
+		// 	if (status == 'OK') {
+		// 		directionsRenderer2.setDirections(result);
+		// 	}else{
+		// 		var path = new google.maps.Polyline({
+		// 			path: [theseProps[3],theseProps[5]],
+		// 			strokeColor: color2,
+		// 			geodesic: true
+		// 		})
+		// 		path.setMap(map);
+		// 	}
+		// });
 
-		// lline3
-		var request = {
-			origin: theseProps[5],
-		    destination: theseProps[1],
-		    travelMode: 'BICYCLING'
-		};
-		directionsService.route(request, function(result, status) {
-			if (status == 'OK') {
-				directionsRenderer3.setDirections(result);
-			}else{
-				var path = new google.maps.Polyline({
-					path: [theseProps[5],theseProps[1]],
-					strokeColor: color3,
-					geodesic: true
-				})
-				path.setMap(map);
-			}
-		});
+		// // lline3
+		// var request = {
+		// 	origin: theseProps[5],
+		//     destination: theseProps[1],
+		//     travelMode: 'BICYCLING'
+		// };
+		// directionsService.route(request, function(result, status) {
+		// 	if (status == 'OK') {
+		// 		directionsRenderer3.setDirections(result);
+		// 	}else{
+		// 		var path = new google.maps.Polyline({
+		// 			path: [theseProps[5],theseProps[1]],
+		// 			strokeColor: color3,
+		// 			geodesic: true
+		// 		})
+		// 		path.setMap(map);
+		// 	}
+		// });
 
+
+		var path = new google.maps.Polyline({
+			path: [theseProps[5],theseProps[1]],
+			strokeColor: color3,
+			geodesic: true
+		})
+		path.setMap(map);
+		var path = new google.maps.Polyline({
+			path: [theseProps[3],theseProps[5]],
+			strokeColor: color2,
+			geodesic: true
+		})
+		path.setMap(map);
+		var path = new google.maps.Polyline({
+			path: [theseProps[1],theseProps[3]],
+			strokeColor: color3,
+			geodesic: true
+		})
+		path.setMap(map);
 
 
 		// center at most recent

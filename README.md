@@ -21,6 +21,8 @@ last sentence title, author and date, also goes in props file
 
 
 
+make directions not load everytime
+
 can cycel through differnt animal icons
 
 no ordered list of all posts, except when log in automatically goes to newest
@@ -29,6 +31,8 @@ ie serialziing by same overlapping paths?
 can click on author?/time
 
 simple continous ocmments bars
+
+make will focus on 1 locaiton if only is 1
 
 
 make asccessible send emails somehow
