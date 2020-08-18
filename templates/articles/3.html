@@ -4,6 +4,9 @@
 {% block content %}
 
 
+<script src="{{ url_for('static', filename='mapcode.js') }}">
+	console.log('index map')
+</script>
 
 <body>
 
@@ -31,22 +34,34 @@
 
 
 
-What profits were made under conditions we now consider immoral?
+What profits were made under conditions we now consider immoral? <br>
+
+The obvious example is slavery. After emancipation blacks found themselves free yet with no property of their own. African Americans returning from WW2 were given housing with much lower value than those given to whites. 
 
 ie reparatiosn fro black epople
 and evne after emancipation they were foudn with no money of htier own
-blacks retunring from ww2 and placed in wrose aprtments than whites
+African Americans retunring from ww2 were given housing sorth much less than those given to whites.
 coutnries that profitted from oil reserves ie norways fund
 but now boganville in poverty but could start a state with new toxic mines, but now we consider them to be immoral
+oil fund 19990
 
 women who have not been able to be preists
 
 
+These have brought forth calls for reparations (https://uncpress.org/book/9781469654973/from-here-to-equality/)
+and climate debt.
 
 
-All government contribute to a morality fund 
+
+
+Governments could contribute and withdraw from a 'morality fund' as a means to neutralise the explotion cause by a 'time-localised' morality.
+
 
 how decide hwo much contribute, for potential immoralites we are commiting now ie when have amximal moral ambivelnece or when minimal ie nazis had certainty in mroality
+
+how much alreayd spent?
+thought millions died in nrth also
+
 
 and spend it
 
@@ -94,7 +109,6 @@ morality fund proposal
 <script src="{{ url_for('static', filename='props.js') }}">
 </script>
 
-<script src="{{ url_for('static', filename='mapcode.js') }}"></script>
 
 
 <script>
@@ -109,8 +123,9 @@ console.log('thesePropsinarticlene2w')
 console.log(number)
 console.log(theseProps)
 
-console.log("maeep")
-console.log(map)
+var articleProp = theseProps;
+
+
 
 
 var pageNumber = String(1700-number)+"/1700";
@@ -123,8 +138,6 @@ if(theseProps.length>5){
 	document.getElementById("p3").innerHTML = theseProps[4];
 }
 document.getElementById("end").innerHTML = theseProps[theseProps.length-1];
-
-var articleProp = theseProps;
 
 // var bounds = new google.maps.LatLngBounds();
 // bounds.extend(theseProps[1]);

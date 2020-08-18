@@ -35,6 +35,10 @@ simple continous ocmments bars
 make will focus on 1 locaiton if only is 1
 
 
+make map update to right triangle, just need to get rid of missing props errors,
+so can reupdate bounds
+
+
 make asccessible send emails somehow
 
 automatically publish as video to instagram?

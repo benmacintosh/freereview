@@ -1,13 +1,18 @@
 // var map = null;
+var map;
+var freebounds;
 
 function initMap(){
 	var color2 = '#000050';
 	var color3 = '#0078BD';
 
+
+
 	var directionsService = new google.maps.DirectionsService();
 	var bounds = new google.maps.LatLngBounds();
+	// freebounds = new google.maps.LatLngBounds();
 
-	var map = new google.maps.Map(document.getElementById("map"),{
+	map = new google.maps.Map(document.getElementById("map"),{
 		mapTypeControl: false,
 		streetViewControl: false,
 		fullscreenControl: false,
@@ -30,11 +35,16 @@ function initMap(){
 
 
 
+
+
 	for(var i = 0;i<props.length;i++){
 		addTriangle(props[i],i+1);
 	}
 
 	function addTriangle(theseProps,index){
+
+		console.log('theseprops in map');
+		console.log(theseProps);
 
 		var directionsRenderer1 = new google.maps.DirectionsRenderer({
 			suppressMarkers: true,
@@ -121,15 +131,7 @@ function initMap(){
 			window.location.replace(nextUrl+"/"+(index)+".html");
 		});
 
-		// google.maps.event.addListener(box1, 'click', function() {
-		// 	window.location.replace(window.location.origin+"/"+(i)+".html");
-  //    	});
-		// google.maps.event.addListener(box2, 'click', function() {
-		// 	window.location.replace(window.location.origin+"/"+(i)+".html");
-  //    	});
-		// google.maps.event.addListener(box3, 'click', function() {
-		// 	window.location.replace(window.location.origin+"/"+(i)+".html");
-  //    	});
+
 
 
 
@@ -223,20 +225,30 @@ function initMap(){
 
 
 
-
-	// if been defined from another article
-	var bounds = new google.maps.LatLngBounds();
 	if(articleProp !== null){
 		console.log('articleprop inside mapcode');
 		console.log(articleProp);
 		if(articleProp.length>2){
-			bounds.extend(articleProp[1]);
-			bounds.extend(articleProp[3]);				
+			freebounds.extend(articleProp[1]);
+			freebounds.extend(articleProp[3]);				
 		}
 		if(articleProp.length>5){
-			bounds.extend(articleProp[5]);
+			freebounds.extend(articleProp[5]);
 		}
-		map.fitBounds(bounds);
-		map.panToBounds(bounds);
+		map.fitBounds(freebounds);
+		map.panToBounds(freebounds);
 	}
+
 }
+
+// function resetBounds(articleProp){
+
+// }
+
+
+
+// google.maps.event.addDomListener(window, 'load', initMap);
+
+// $(document).ready(function(){
+// 	console.log('g"');
+// });

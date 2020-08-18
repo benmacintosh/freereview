@@ -167,16 +167,14 @@ Love You. are so pretty<br>
 
 
 
+
+
+
 <div id = "pn" style="float: right;"></div>
 
 
 
 
-
-<script src="{{ url_for('static', filename='props.js') }}">
-</script>
-
-<script src="{{ url_for('static', filename='mapcode.js') }}"></script>
 
 
 <script>
@@ -191,10 +189,6 @@ console.log('thesePropsinarticlene2w')
 console.log(number)
 console.log(theseProps)
 
-console.log("maeep")
-console.log(map)
-
-
 var pageNumber = String(1700-number)+"/1700";
 document.getElementById("pn").innerHTML = pageNumber;
 document.getElementById("p1").innerHTML = theseProps[0];
@@ -208,16 +202,15 @@ document.getElementById("end").innerHTML = theseProps[theseProps.length-1];
 
 var articleProp = theseProps;
 
+// initMap().resetBounds();
 // var bounds = new google.maps.LatLngBounds();
 // bounds.extend(theseProps[1]);
 // bounds.extend(theseProps[3]);
 // bounds.extend(theseProps[5]);
 // map.fitBounds(bounds);
-// map.panToBounds(bounds);	
+// map.panToBounds(bounds);
 
 </script>
-
-
 
 
 
