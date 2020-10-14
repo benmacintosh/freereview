@@ -19,6 +19,10 @@ last sentence title, author and date, also goes in props file
 
 
 
+but update map bounds only works in devleopement, when reload then move to article via free
+cnat access google
+only works if load straight to page soemtimes
+
 
 fake ad for remove insects from house with own rpessurize
 5000 newtons
