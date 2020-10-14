@@ -7,10 +7,8 @@ function initMap(){
 	var color3 = '#0078BD';
 
 
-
 	var directionsService = new google.maps.DirectionsService();
 	var bounds = new google.maps.LatLngBounds();
-	// freebounds = new google.maps.LatLngBounds();
 
 	map = new google.maps.Map(document.getElementById("map"),{
 		mapTypeControl: false,
@@ -42,9 +40,6 @@ function initMap(){
 	}
 
 	function addTriangle(theseProps,index){
-
-		console.log('theseprops in map');
-		console.log(theseProps);
 
 		var directionsRenderer1 = new google.maps.DirectionsRenderer({
 			suppressMarkers: true,
@@ -136,81 +131,91 @@ function initMap(){
 
 
 
-		// // line1
-		// var request = {
-		// 	origin: theseProps[1],
-		//     destination: theseProps[3],
-		//     travelMode: 'BICYCLING'
-		// };
-		// directionsService.route(request, function(result, status) {
-		// 	if (status == 'OK') {
-		// 		directionsRenderer1.setDirections(result);
-		// 	}else{
-		// 		var path = new google.maps.Polyline({
-		// 			path: [theseProps[1],theseProps[3]],
-		// 			geodesic: true
-		// 		})
-		// 		path.setMap(map);
-		// 	}
-		// });
-
-		// // line2
-		// var request = {
-		// 	origin: theseProps[3],
-		//     destination: theseProps[5],
-		//     travelMode: 'BICYCLING'
-		// };
-		// directionsService.route(request, function(result, status) {
-		// 	if (status == 'OK') {
-		// 		directionsRenderer2.setDirections(result);
-		// 	}else{
-		// 		var path = new google.maps.Polyline({
-		// 			path: [theseProps[3],theseProps[5]],
-		// 			strokeColor: color2,
-		// 			geodesic: true
-		// 		})
-		// 		path.setMap(map);
-		// 	}
-		// });
-
-		// // lline3
-		// var request = {
-		// 	origin: theseProps[5],
-		//     destination: theseProps[1],
-		//     travelMode: 'BICYCLING'
-		// };
-		// directionsService.route(request, function(result, status) {
-		// 	if (status == 'OK') {
-		// 		directionsRenderer3.setDirections(result);
-		// 	}else{
-		// 		var path = new google.maps.Polyline({
-		// 			path: [theseProps[5],theseProps[1]],
-		// 			strokeColor: color3,
-		// 			geodesic: true
-		// 		})
-		// 		path.setMap(map);
-		// 	}
-		// });
 
 
-		var path = new google.maps.Polyline({
-			path: [theseProps[5],theseProps[1]],
-			strokeColor: color3,
-			geodesic: true
-		})
-		path.setMap(map);
-		var path = new google.maps.Polyline({
-			path: [theseProps[3],theseProps[5]],
-			strokeColor: color2,
-			geodesic: true
-		})
-		path.setMap(map);
-		var path = new google.maps.Polyline({
-			path: [theseProps[1],theseProps[3]],
-			strokeColor: color3,
-			geodesic: true
-		})
-		path.setMap(map);
+		// line1
+		var request = {
+			origin: theseProps[1],
+		    destination: theseProps[3],
+		    travelMode: 'BICYCLING'
+		};
+		directionsService.route(request, function(result, status) {
+			if (status == 'OK') {
+				directionsRenderer1.setDirections(result);
+			}else{
+				var path = new google.maps.Polyline({
+					path: [theseProps[1],theseProps[3]],
+					geodesic: true
+				})
+				path.setMap(map);
+			}
+		});
+
+		// line2
+		var request = {
+			origin: theseProps[3],
+		    destination: theseProps[5],
+		    travelMode: 'BICYCLING'
+		};
+		directionsService.route(request, function(result, status) {
+			if (status == 'OK') {
+				directionsRenderer2.setDirections(result);
+			}else{
+				var path = new google.maps.Polyline({
+					path: [theseProps[3],theseProps[5]],
+					strokeColor: color2,
+					geodesic: true
+				})
+				path.setMap(map);
+			}
+		});
+
+		// lline3
+		var request = {
+			origin: theseProps[5],
+		    destination: theseProps[1],
+		    travelMode: 'BICYCLING'
+		};
+		directionsService.route(request, function(result, status) {
+			if (status == 'OK') {
+				directionsRenderer3.setDirections(result);
+			}else{
+				var path = new google.maps.Polyline({
+					path: [theseProps[5],theseProps[1]],
+					strokeColor: color3,
+					geodesic: true
+				})
+				path.setMap(map);
+			}
+		});
+
+
+		// var path = new google.maps.Polyline({
+		// 	path: [theseProps[5],theseProps[1]],
+		// 	strokeColor: color3,
+		// 	geodesic: true
+		// })
+		// path.setMap(map);
+		// var path = new google.maps.Polyline({
+		// 	path: [theseProps[3],theseProps[5]],
+		// 	strokeColor: color2,
+		// 	geodesic: true
+		// })
+		// path.setMap(map);
+		// var path = new google.maps.Polyline({
+		// 	path: [theseProps[1],theseProps[3]],
+		// 	strokeColor: color3,
+		// 	geodesic: true
+		// })
+		// path.setMap(map);
+
+				// add each path, if nto stored alreayd
+		// https://stackoverflow.com/questions/38735226/saving-and-recreating-custom-routes-with-waypoints-in-google-maps-api
+
+
+
+
+
 
 
 		// center at most recent
@@ -221,11 +226,18 @@ function initMap(){
 		}
 		map.fitBounds(bounds);
 		map.panToBounds(bounds);
+
 	}
+	
 
 
+
+	console.log("article props inside mapcode")
+	console.log(articleProp)
 
 	if(articleProp !== null){
+
+		var freebounds = new google.maps.LatLngBounds();
 		console.log('articleprop inside mapcode');
 		console.log(articleProp);
 		if(articleProp.length>2){
@@ -237,13 +249,10 @@ function initMap(){
 		}
 		map.fitBounds(freebounds);
 		map.panToBounds(freebounds);
-	}
+}
 
 }
 
-// function resetBounds(articleProp){
-
-// }
 
 
 

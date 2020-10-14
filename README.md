@@ -20,6 +20,11 @@ last sentence title, author and date, also goes in props file
 
 
 
+fake ad for remove insects from house with own rpessurize
+5000 newtons
+
+add twtiter soemthing commnet/follow links
+
 
 make directions not load everytime
 
