@@ -202,13 +202,36 @@ document.getElementById("end").innerHTML = theseProps[theseProps.length-1];
 
 var articleProp = theseProps;
 
-// initMap().resetBounds();
-// var bounds = new google.maps.LatLngBounds();
-// bounds.extend(theseProps[1]);
-// bounds.extend(theseProps[3]);
-// bounds.extend(theseProps[5]);
-// map.fitBounds(bounds);
-// map.panToBounds(bounds);
+
+
+
+// and chagne bounds
+// if cna access maps global??
+
+console.log(theseProps)
+
+
+console.log('map inside articel')
+console.log(map)
+
+var bounds = new google.maps.LatLngBounds();
+console.log(bounds)
+
+bounds.extend(theseProps[1]);
+
+if(theseProps.length>3){
+	bounds.extend(theseProps[3]);
+}
+if(theseProps.length>5){
+	bounds.extend(theseProps[5]);
+}
+
+map.fitBounds(bounds);
+console.log(map)
+map.panToBounds(bounds);	
+
+
+
 
 </script>
 

@@ -86,7 +86,7 @@ The first named astroid was named after a city. Subsequent astroids were named a
 
 
 
-
+<!-- SET SOME THINGS FOR THE ARTICLE -->
 
 
 <script src="{{ url_for('static', filename='props.js') }}">
@@ -96,15 +96,13 @@ The first named astroid was named after a city. Subsequent astroids were named a
 
 <script>
 
+
 var nextUrl = window.location.href;
 var lastIndex = nextUrl.lastIndexOf("/");
 console.log(lastIndex)
 var number = parseInt(nextUrl.slice(lastIndex+1,-5));
-
 var theseProps = props[number-1];
-console.log('thesePropsinarticlene2w')
 console.log(number)
-console.log(theseProps)
 
 
 
@@ -121,16 +119,32 @@ document.getElementById("end").innerHTML = theseProps[theseProps.length-1];
 
 
 
-var articleProp = theseProps;
+
+
+
+// and chagne bounds
+// if cna access maps global??
+
+console.log(theseProps)
+
+
 console.log('map inside articel')
 console.log(map)
 
 var bounds = new google.maps.LatLngBounds();
 console.log(bounds)
+
 bounds.extend(theseProps[1]);
-bounds.extend(theseProps[3]);
-bounds.extend(theseProps[5]);
+
+if(theseProps.length>3){
+	bounds.extend(theseProps[3]);
+}
+if(theseProps.length>5){
+	bounds.extend(theseProps[5]);
+}
+
 map.fitBounds(bounds);
+console.log(map)
 map.panToBounds(bounds);	
 
 

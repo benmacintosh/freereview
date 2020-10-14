@@ -1,6 +1,7 @@
 // var map = null;
 var map;
 var freebounds;
+var articleProp;
 
 function initMap(){
 	var color2 = '#000050';
@@ -209,6 +210,7 @@ function initMap(){
 		// })
 		// path.setMap(map);
 
+
 				// add each path, if nto stored alreayd
 		// https://stackoverflow.com/questions/38735226/saving-and-recreating-custom-routes-with-waypoints-in-google-maps-api
 
@@ -232,24 +234,25 @@ function initMap(){
 
 
 
-	console.log("article props inside mapcode")
-	console.log(articleProp)
+// 	console.log("article props inside map")
+// 	console.log(articleProp)
 
-	if(articleProp !== null){
+// 	if(articleProp !== null){
 
-		var freebounds = new google.maps.LatLngBounds();
-		console.log('articleprop inside mapcode');
-		console.log(articleProp);
-		if(articleProp.length>2){
-			freebounds.extend(articleProp[1]);
-			freebounds.extend(articleProp[3]);				
-		}
-		if(articleProp.length>5){
-			freebounds.extend(articleProp[5]);
-		}
-		map.fitBounds(freebounds);
-		map.panToBounds(freebounds);
-}
+// 		var freebounds = new google.maps.LatLngBounds();
+// 		console.log('articleprop inside mapcode');
+// 		console.log(articleProp);
+// 		if(articleProp.length>2){
+// 			freebounds.extend(articleProp[1]);
+// 			freebounds.extend(articleProp[3]);				
+// 		}
+// 		if(articleProp.length>5){
+// 			freebounds.extend(articleProp[5]);
+// 		}
+// 		map.fitBounds(freebounds);
+// 		map.panToBounds(freebounds);
+// }
+
 
 }
 
