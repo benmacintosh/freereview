@@ -14,7 +14,10 @@ var props = [
 'Morality fund proposal, H Lefthand 18/8/2020'],
 
 ["Did we fold the world?",{lat: -39.136026, lng: 146.374590},
-'Time for world-folding, Ben Macintosh 26/8/2020']
+'Time for world-folding, Ben Macintosh 26/8/2020'],
+
+["Stuck under the sea ice",{lat: 44.730537745186275, lng: 11.119833798051626},
+'On the Weight of Paper and Land Art, Ben Macintosh 12/10/20']
 
 
 ];
