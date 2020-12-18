@@ -17,7 +17,7 @@ var props = [
 'Time for world-folding, Ben Macintosh 26/8/2020'],
 
 ["Stuck under the sea ice",{lat: 44.730537745186275, lng: 11.119833798051626},
-'On the Weight of Paper and Land Art, Ben Macintosh 12/10/20']
+'On the weight of paper and land art, Ben Macintosh 12/10/20']
 
 
 ];
