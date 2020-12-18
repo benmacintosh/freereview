@@ -2,6 +2,9 @@
 
 var props = [
 
+["About FR",{lat: 0, lng: 0},
+"About FR"],
+
 ["Are all events related accidentally or essentially?",{lat: 47.567889 , lng: 10.383556},
 'What is the funnest way to order your feelings? H Lefthand, 18/8/2020'],
 
